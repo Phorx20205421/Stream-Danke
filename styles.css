@@ -1,0 +1,187 @@
+@keyframes glowing {
+    0% {
+      color: #ffd700; /* Gold */
+      text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700; /* Glowing effect */
+    }
+    25% {
+      color: #1e90ff; /* Blue */
+      text-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 30px #1e90ff; /* Glowing effect */
+    }
+    50% {
+      color: #ff1493; /* Pink */
+      text-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493; /* Glowing effect */
+    }
+    75% {
+      color: #32cd32; /* Green */
+      text-shadow: 0 0 10px #32cd32, 0 0 20px #32cd32, 0 0 30px #32cd32; /* Glowing effect */
+    }
+    100% {
+      color: #ff4500; /* Flame orange */
+      text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500, 0 0 40px #ff4500; /* Intensified glowing effect */
+    }
+  }
+
+  @keyframes spinning {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes exploding {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    70% {
+      transform: scale(2);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulsating {
+    0% {
+      color: #ffffff; /* White */
+      text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* Pulsating effect */
+    }
+    25% {
+      color: #1e90ff; /* Blue */
+      text-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff; /* Pulsating effect */
+    }
+    50% {
+      color: #ff1493; /* Pink */
+      text-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493; /* Pulsating effect */
+    }
+    75% {
+      color: #32cd32; /* Green */
+      text-shadow: 0 0 10px #32cd32, 0 0 20px #32cd32; /* Pulsating effect */
+    }
+    100% {
+      color: #ff00ff; /* Magenta */
+      text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff; /* Maximum pulsating effect */
+    }
+  }
+
+  @keyframes heartFalling {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 1;
+    }
+  }
+
+  body {
+    background-color: #000000; /* Black */
+    overflow: hidden;
+  }
+
+  .animation-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .text-animation {
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffd700; /* Gold */
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700; /* Initial glowing effect */
+    animation: glowing 5s infinite;
+    animation: glowing 5s infinite, waveAnimation 2s infinite; /* Kombiniere die Wellenanimation mit dem Glüheffekt */
+}
+
+
+  .logo {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff; /* White */
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* Initial pulsating effect */
+    animation: pulsating 5s infinite;
+  }
+
+  .logo:before {
+    content: "\2665"; /* Heart symbol */
+  }
+
+  .animation-container:hover .logo {
+    color: #ff00ff; /* Magenta */
+    text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff; /* Intensified pulsating effect on hover */
+  }
+
+  .animation-container:hover .text-animation {
+    color: #ff0000; /* Red */
+    text-shadow: 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000; /* Intensified glowing effect on hover */
+    animation: glowing 5s infinite, waveAnimation 2s infinite; /* Kombiniere die Wellenanimation mit dem Glüheffekt */
+
+  }
+
+  .heart-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: heartFalling 4s infinite;
+  }
+
+  .heart {
+    display: inline-block;
+    font-size: 40px;
+    color: #ff0000; /* Red */
+  }
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  body {
+    background-color: #000000;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .animation-container {
+    text-align: center;
+  }
+
+  .text-animation {
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #4CAF50; /* Green */
+    animation: fadeInOut 5s infinite;
+  }
+
+  .star {
+    width: 20px;
+    height: 20px;
+    background-color: #ffD700; /* Gold */
+    clip-path: polygon(50% 0%, 61.8% 38.2%, 100% 35.4%, 68.2% 57.3%, 79.1% 91.7%, 50% 70%, 20.9% 91.7%, 31.8% 57.3%, 0% 35.4%, 38.2% 38.2%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Start as invisible */
+  }
